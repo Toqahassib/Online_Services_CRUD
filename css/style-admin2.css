@@ -1,0 +1,578 @@
+/* 
+    Author: Vijay Thapa;
+    Theme: Restaurant service Order;
+    version: 1.0;
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+:root {
+  --color: #9615db;
+
+  --gradient-1: linear-gradient(to bottom right, #7d7f80, #9615db);
+
+  --gradient-2: linear-gradient(to bottom right, #d2d3d3, #7d7f80);
+
+  --gradient-3: linear-gradient(to bottom right, #555759, #2d3032);
+
+  --gradient-4: linear-gradient(to bottom right, #9615db, #d2d3d3);
+}
+
+/* CSS for All */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1%;
+}
+.img-responsive {
+  width: 100%;
+}
+.img-curve {
+  border-radius: 15px;
+}
+
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-white {
+  color: white;
+}
+
+.clearfix {
+  clear: both;
+  float: none;
+}
+
+a {
+  color: #9615db;
+  text-decoration: none;
+}
+a:hover {
+  color: #9615db;
+}
+
+.btn {
+  padding: 1%;
+  border: none;
+  font-size: 1.7rem;
+  border-radius: 5px;
+}
+.btn-primary {
+  background-color: #9615db;
+  color: white;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  color: white;
+  background-color: #9615db;
+}
+h2 {
+  color: #2f3542;
+  font-size: 3rem;
+  margin-bottom: 2%;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 2rem;
+}
+.float-container {
+  position: relative;
+}
+.float-text {
+  position: absolute;
+  bottom: 50px;
+  left: 40%;
+}
+fieldset {
+  border: 1px solid white;
+  margin: 5%;
+  padding: 3%;
+  border-radius: 5px;
+}
+
+.error {
+  padding: 2%;
+  color: red;
+  font-size: 1.6rem;
+}
+
+.success {
+  padding: 2%;
+  color: green;
+}
+
+/* navbar */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgb(37, 37, 37);
+}
+.header .logo {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.header .logo i {
+  padding: 0 0.5rem;
+}
+
+.header .navbar ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header .navbar ul li {
+  margin: 0 1rem;
+}
+
+.header .navbar ul li a {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.header .navbar ul li a:hover {
+  color: #ccc;
+}
+
+.header .navbar .login-btn {
+  padding: 7px 25px;
+  background: white;
+  color: black;
+  border-radius: 50px;
+  align-items: center;
+}
+
+.header .navbar .login-btn:hover {
+  background-color: #9615db;
+}
+
+.header .fa-bars {
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  display: none;
+}
+
+/* home section style */
+
+.home {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(#2d3032, var(--color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  text-align: center;
+  padding: 0 1rem;
+  position: relative;
+  overflow: hidden !important;
+}
+
+.home .banner {
+  color: #fff;
+  font-size: 5rem;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.home .slogan {
+  color: #eee;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.cookie {
+  padding: 5px;
+  background-color: white;
+  opacity: 0.6;
+}
+
+.home input[type="search"] {
+  height: 4rem;
+  width: 60rem;
+  background: #fff;
+  color: #444;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.home input[type="submit"] {
+  height: 4rem;
+  background-color: white;
+  color: var(--color);
+  margin: 2rem auto;
+  width: 20rem;
+  display: block;
+  font-size: 2rem;
+}
+
+.home input:hover {
+  letter-spacing: 0.1rem;
+}
+
+/* wave  */
+
+.home .wave {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  height: 11rem;
+  width: 100%;
+  background: url(../images/wave.png);
+  background-size: 100rem 11rem;
+  background-repeat: repeat-x;
+  animation: waves 10s linear infinite;
+}
+
+.home .wave2 {
+  animation-direction: reverse;
+  opacity: 0.2;
+}
+
+.home .wave3 {
+  animation-duration: 4s;
+  opacity: 0.5;
+}
+
+/* wave animation */
+
+@keyframes waves {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 100rem;
+  }
+}
+
+/* nut */
+
+.home .fa-cog {
+  position: absolute;
+  font-size: 30rem;
+  opacity: 0.15;
+  color: #fff;
+  animation: rotate 10s linear infinite;
+}
+
+.home .nut1 {
+  top: 10%;
+  left: -15rem;
+}
+
+.home .nut2 {
+  bottom: 10%;
+  right: -13rem;
+  animation-direction: reverse;
+}
+
+/* nut animation */
+
+@keyframes rotate {
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+/* CSSS for navbar section */
+
+.logo {
+  width: 10%;
+  float: left;
+}
+
+.logo a {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.menu {
+  line-height: 60px;
+}
+.menu ul {
+  list-style-type: none;
+}
+
+.menu ul li {
+  display: inline;
+  padding: 1%;
+  font-weight: bold;
+}
+
+/* CSS for service SEarch Section */
+
+/* CSS for Food SEarch Section */
+
+.service-search {
+  background-image: url(../images/landing_img/project9.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 10% 0;
+}
+
+.service-search input[type="search"] {
+  width: 50%;
+  height: 4rem;
+  padding: 1%;
+  font-size: 2rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.service-search input[type="submit"] {
+  height: 4rem;
+  padding-bottom: 3%;
+  font-size: 2rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.home {
+  background-image: url(../images/landing_img/search.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 10% 0;
+}
+
+/* CSS for Categories */
+.categories {
+  padding: 4% 0;
+}
+
+.box-3 {
+  width: 28%;
+  float: left;
+  margin: 2%;
+}
+
+/* CSS for service Menu */
+.service-menu {
+  background-color: #ececec;
+  padding: 4% 0;
+}
+.service-menu-box {
+  width: 43%;
+  height: 20%;
+  margin: 1%;
+  padding: 2%;
+  float: left;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.service-menu-img {
+  width: 20%;
+  float: left;
+}
+
+.service-menu-desc {
+  width: 70%;
+  float: left;
+  margin-left: 8%;
+}
+
+.service-price {
+  font-size: 2rem;
+  margin: 2% 0;
+}
+.service-detail {
+  font-size: 1.5rem;
+  color: #747d8c;
+}
+
+/* CSS for Social */
+.social ul {
+  list-style-type: none;
+}
+.social ul li {
+  display: inline;
+  padding: 1%;
+}
+
+/* for Order Section */
+.order {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #999999;
+}
+.input-responsive {
+  width: 96%;
+  padding: 1%;
+  margin-bottom: 3%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.3rem;
+}
+.order-label {
+  margin-bottom: 1%;
+  font-weight: bold;
+}
+
+/* ---------------------- */
+
+.grid-wrapper {
+  display: grid;
+  /* if their is 250px of space the boxes will align accordingly */
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  grid-gap: 2em;
+  padding: 2rem;
+  flex-basis: 50%;
+}
+
+.footerr {
+  margin-top: 80px;
+  background-image: url("../images/footer-agency.png");
+  background-size: cover;
+}
+
+.col-4 {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.footerr1 h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: var(--color);
+}
+
+.footerr1 p {
+  color: grey;
+  font-size: 1.6rem;
+}
+
+.footerr1 i {
+  margin: 50px 20px;
+  font-size: 25px;
+  color: grey;
+}
+
+.footerr2 h4,
+.footerr3 h4,
+.footerr4 h4 {
+  color: grey;
+  font-weight: 400px;
+  font-size: 1.4rem;
+}
+
+.footerr2 h1,
+.footerr3 h1,
+.footerr4 h1 {
+  font-size: 2rem;
+}
+
+.footerr hr {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.copyright {
+  display: flex;
+  justify-content: space-around;
+  color: gray;
+  padding: 30px;
+  font-weight: 400;
+  font-size: 0.5rem;
+}
+
+/* CSS for Mobile Size or Smaller Screen */
+
+@media only screen and (max-width: 768px) {
+  .container {
+    text-align: center;
+  }
+
+  .home input[type="search"] {
+    width: 40rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar ul li {
+    text-align: center;
+  }
+
+  .service-search input[type="search"] {
+    width: 90%;
+    padding: 2%;
+    margin-bottom: 3%;
+  }
+
+  .btn {
+    width: 91%;
+    padding: 2%;
+  }
+
+  .service-search {
+    padding: 10% 0;
+  }
+
+  .categories {
+    padding: 20% 0;
+  }
+  h2 {
+    margin-bottom: 10%;
+  }
+  .box-3 {
+    width: 100%;
+    margin: 4% auto;
+  }
+
+  .service-menu {
+    padding: 20% 0;
+  }
+
+  .service-menu-box {
+    width: 90%;
+    padding: 5%;
+    margin-bottom: 5%;
+  }
+  .social {
+    padding: 5% 0;
+  }
+  .order {
+    width: 100%;
+  }
+}
